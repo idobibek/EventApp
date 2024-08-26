@@ -22,7 +22,7 @@ const VendorComponent = () => {
 
   const fetchVendors = async () => {
     try {
-      const response = await axiosInstance.get("/api/vendor/all");
+      const response = await axiosInstance.get("/api/vendors/all");
       setVendors(response.data.vendors);
     } catch (error) {
       console.error("Error fetching vendors:", error);
@@ -39,14 +39,14 @@ const VendorComponent = () => {
     try {
       if (editingVendor) {
         const response = await axiosInstance.patch(
-          `/api/vendor/update/${editingVendor._id}`,
+          `/api/vendors/update/${editingVendor._id}`,
           newVendor
         );
         toast.success(response.data.msg);
         setEditingVendor(null);
       } else {
         const response = await axiosInstance.post(
-          "/api/vendor/create",
+          "/api/vendors/add",
           newVendor
         );
         toast.success(response.data.msg);
@@ -74,7 +74,7 @@ const VendorComponent = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.delete(
-        `http://localhost:8000/api/vendor/delete/${id}`,
+        `http://localhost:8000/api/vendors/delete/${id}`,
         {
           headers: {
             Authorization: token,

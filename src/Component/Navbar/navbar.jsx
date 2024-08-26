@@ -35,7 +35,6 @@ function Navbar() {
             {/* Logo */}
             <div>
               <Link to="/" className="flex items-center py-4 px-2">
-                <img src="" alt="BEK BEE Logo" className="h-8 w-8 mr-2" />
                 <span className="font-bold text-green-800 text-xl">BEK BEE</span>
               </Link>
             </div>

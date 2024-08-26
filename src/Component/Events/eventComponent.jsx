@@ -74,28 +74,28 @@ const EventComponent = () => {
 
   return (
     <section className="w-full h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">Featured Event</h2>
-        <div className="relative bg-white rounded-lg shadow-lg overflow-hidden group">
+      <div className="w-full h-full max-w-screen-lg mx-auto px-4 flex flex-col justify-between">
+        <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">Featured Event</h2>
+        <div className="relative bg-white rounded-lg shadow-lg overflow-hidden flex-grow flex flex-col">
           <img
             src={currentEvent.imgSrc}
             alt={currentEvent.title}
-            className="w-full h-[450px] object-cover transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-2/3 object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6">
-            <h3 className="text-2xl font-semibold mb-4 text-white">{currentEvent.title}</h3>
-            <p className="text-lg text-gray-300">{currentEvent.description}</p>
-            <div className="mt-6">
-              <p className="text-lg text-gray-300"><strong>Date:</strong> {currentEvent.date}</p>
-              <p className="text-lg text-gray-300"><strong>Location:</strong> {currentEvent.location}</p>
+          <div className="flex-grow p-4 flex flex-col justify-center bg-gradient-to-t from-gray-900 via-transparent to-transparent">
+            <h3 className="text-2xl font-semibold mb-2 text-white">{currentEvent.title}</h3>
+            <p className="text-base text-gray-300 mb-4">{currentEvent.description}</p>
+            <div className="mt-2">
+              <p className="text-base text-gray-300"><strong>Date:</strong> {currentEvent.date}</p>
+              <p className="text-base text-gray-300"><strong>Location:</strong> {currentEvent.location}</p>
             </div>
           </div>
         </div>
-        <div className="flex justify-between mt-8">
-          <button onClick={handlePrev} className="bg-purple-600 text-white py-3 px-6 rounded-full text-lg font-medium hover:bg-purple-700">
+        <div className="flex justify-between mt-4">
+          <button onClick={handlePrev} className="bg-purple-600 text-white py-2 px-4 rounded-full text-base font-medium hover:bg-purple-700">
             Previous
           </button>
-          <button onClick={handleNext} className="bg-purple-600 text-white py-3 px-6 rounded-full text-lg font-medium hover:bg-purple-700">
+          <button onClick={handleNext} className="bg-purple-600 text-white py-2 px-4 rounded-full text-base font-medium hover:bg-purple-700">
             Next
           </button>
         </div>
